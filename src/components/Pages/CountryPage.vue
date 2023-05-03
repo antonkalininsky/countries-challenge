@@ -5,7 +5,9 @@ export default {
 </script>
 
 <template lang="">
-    <div>Hi I am CountryPage</div>
+    <div>Hi I am CountryPage
+        {{ $store.state.count }}
+    </div>
 </template>
 
 <style scoped></style>
