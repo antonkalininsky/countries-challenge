@@ -1,26 +1,26 @@
 <script>
-import NavElement from '../Elements/NavElement.vue';
-import SearchElement from '../Elements/SearchElement.vue';
-import ResultsElement from '../Elements/ResultsElement.vue';
+import NavElement from "../Elements/NavElement.vue";
+import SearchElement from "../Elements/SearchElement.vue";
+import ResultsElement from "../Elements/ResultsElement.vue";
 
 export default {
-    name: 'MainPage',   
+    name: "MainPage",
     components: {
         NavElement,
         SearchElement,
-        ResultsElement
-    }
-}
+        ResultsElement,
+    },
+};
 </script>
 
 <template>
     <div>
         <NavElement />
-        <SearchElement />
-        <ResultsElement />
+        <b-container>
+            <SearchElement />
+            <ResultsElement />
+        </b-container>
     </div>
 </template>
 
-<style scoped>
-    
-</style>
+<style scoped></style>
