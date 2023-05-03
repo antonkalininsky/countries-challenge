@@ -30,6 +30,7 @@ export default {
                 </b-list-group-item>
             </b-list-group>
         </b-card-text>
+        <b-link class="stretched-link" to="/country"></b-link>
     </b-card>
 </template>
 

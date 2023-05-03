@@ -23,15 +23,15 @@ export default {
             this.columns = 4;
             if (value < 580) {
                 this.columns = 1;
-                return
+                return;
             }
             if (value < 768) {
                 this.columns = 2;
-                return
+                return;
             }
             if (value < 992) {
                 this.columns = 3;
-                return
+                return;
             }
         },
     },

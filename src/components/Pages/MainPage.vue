@@ -1,12 +1,10 @@
 <script>
-import NavElement from "../Elements/NavElement.vue";
 import SearchElement from "../Elements/SearchElement.vue";
 import ResultsElement from "../Elements/ResultsElement.vue";
 
 export default {
     name: "MainPage",
     components: {
-        NavElement,
         SearchElement,
         ResultsElement,
     },
@@ -14,13 +12,10 @@ export default {
 </script>
 
 <template>
-    <div>
-        <NavElement />
-        <b-container>
-            <SearchElement />
-            <ResultsElement />
-        </b-container>
-    </div>
+    <b-container>
+        <SearchElement />
+        <ResultsElement />
+    </b-container>
 </template>
 
 <style scoped></style>

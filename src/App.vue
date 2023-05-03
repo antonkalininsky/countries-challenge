@@ -1,14 +1,20 @@
+<script>
+import NavElement from "./components/Elements/NavElement.vue";
+
+export default {
+    name: "App",
+    components: {
+        NavElement,
+    },
+};
+</script>
+
 <template>
     <div id="app">
+        <NavElement />
         <router-view></router-view>
     </div>
 </template>
-
-<script>
-export default {
-    name: "App",
-};
-</script>
 
 <style lang="scss">
 @import "https://fonts.googleapis.com/css?family=Nunito+Sans";
