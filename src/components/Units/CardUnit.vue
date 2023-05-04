@@ -28,18 +28,17 @@ export default {
 <template>
     <b-card
         tag="article"
-        style="max-width: 20rem"
-        class="mb-2 border-0 shadow-sm"
+        class="mb-2 border-0 shadow-sm card-size"
         no-body
     >
-        <div class="card-img-box">
-            <b-card-img :src="data.flags.svg" alt="Image" top class="card-img"></b-card-img>
+        <div class="card-img-box rounded-top">
+            <b-card-img :src="data.flags.svg" alt="Image" top class="card-img" rounded="top"></b-card-img>
         </div>
         <div class="px-3">
             <b-card-title class="text-mid text-w-800 pt-3">
                 {{ data.name.common }}
             </b-card-title>
-            <b-card-text class="text-small" style="height: 120px">
+            <b-card-text class="text-small">
                 <b-list-group class="pb-3">
                     <b-list-group-item class="border-0 p-0">
                         <span class="font-weight-bold">Population: </span>

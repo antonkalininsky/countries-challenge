@@ -17,7 +17,7 @@ export default {
         class="px-0"
     >
         <b-container class="px-3">
-            <b-navbar-brand tag="h1" class="text-w-800">
+            <b-navbar-brand tag="h1" class="text-w-800 text-header m-0">
                 Where in the world?
             </b-navbar-brand>
             <b-button

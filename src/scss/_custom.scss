@@ -26,6 +26,9 @@ $font-size-base: 0.875rem;
     font-weight: 300 !important;
 }
 
+.text-header {
+    font-size: clamp(14px, 2vw, 24px) !important;
+}
 
 // COLORS
 $body-bg: #FAFAFA;
@@ -35,11 +38,16 @@ $bg-light: #fff !important;
 // OTHER
 .btn:focus,
 input:focus
-// select:focus 
 {
     box-shadow: none !important;
     outline: none !important;
 }
+
+.card-size {
+    max-width: 20rem; 
+    height: 300px;
+}
+
 .card-img {
     height: 100%;
     width: 100%;
@@ -47,6 +55,6 @@ input:focus
 }
 
 .card-img-box {
-    height: 120px;
+    height: min(calc(200px - 3vw), 160px);
     overflow: hidden;
 }
