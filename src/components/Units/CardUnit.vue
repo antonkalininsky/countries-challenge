@@ -26,13 +26,15 @@ export default {
 </script>
 
 <template>
-    <b-card
-        tag="article"
-        class="mb-2 border-0 shadow-sm card-size"
-        no-body
-    >
+    <b-card tag="article" class="mb-2 border-0 shadow-sm card-size" no-body>
         <div class="card-img-box rounded-top">
-            <b-card-img :src="data.flags.svg" alt="Image" top class="card-img" rounded="top"></b-card-img>
+            <b-card-img
+                :src="data.flags.svg"
+                alt="Image"
+                top
+                class="card-img"
+                rounded="top"
+            ></b-card-img>
         </div>
         <div class="px-3">
             <b-card-title class="text-mid text-w-800 pt-3">

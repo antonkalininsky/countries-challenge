@@ -8,17 +8,16 @@ export default {
         return {
             inputCols: 5,
             filterCols: 4,
-            screenWidth: 0,
         };
     },
     components: {
         SearchInputUnit,
         SearchFilterUnit,
     },
-    mounted() {
-        setInterval(() => {
-            this.screenWidth = window.innerWidth;
-        }, 100);
+    computed: {
+        screenWidth() {
+            return this.$store.state.screenWidth;
+        },
     },
     watch: {
         screenWidth(value) {

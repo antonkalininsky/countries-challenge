@@ -8,6 +8,7 @@ export default {
     },
     created() {
         this.$store.dispatch('fetchAllCountries');
+        this.$store.dispatch('setScreenWidthReader');
     }
 };
 </script>

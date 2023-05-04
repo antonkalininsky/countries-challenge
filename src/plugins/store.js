@@ -5,11 +5,12 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        screenWidth: 0,
         isLoading: false,
         isError: false,
         countries: [],
         shownCountries: [],
-        shownCounter: 0
+        shownCounter: 0,
     },
     actions: {
         fetchAllCountries() {
@@ -29,6 +30,11 @@ const store = new Vuex.Store({
             } finally {
                 this.commit("SET_LOADING", false);
             }
+        },
+        setScreenWidthReader() {
+            setInterval(() => {
+                this.state.screenWidth = window.innerWidth;
+            }, 100);
         },
     },
     mutations: {
@@ -55,7 +61,7 @@ const store = new Vuex.Store({
         ADD_SHOWN_COUNTRIES(state, num) {
             // state.shownCountries = [...state.shownCountries, ...state.countries.slice(state.shownCounter, num)];
             state.shownCounter += num;
-        }
+        },
     },
 });
 
