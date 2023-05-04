@@ -8,15 +8,25 @@ export default {
             num: 8,
             columns: 4,
             screenWidth: 0,
+            countries: []
         };
     },
     components: {
         CardUnit,
     },
-    mounted() {
+    created() {
+        // this.$store.commit('ADD_SHOWN_COUNTRIES', 8);
+        // console.log(this.$store.countries);
+        this.countries = this.$store.countries;
+
         setInterval(() => {
             this.screenWidth = window.innerWidth;
         }, 100);
+    },
+    computed: {
+        shownCountries() {
+            return this.$store.state.countries
+        }
     },
     watch: {
         screenWidth(value) {
@@ -41,8 +51,8 @@ export default {
 <template>
     <b-container class="px-0">
         <b-row :cols="columns">
-            <b-col class="pb-4" v-for="card in num" :key="card">
-                <CardUnit class="mx-auto" />
+            <b-col class="pb-4" v-for="country in shownCountries" :key="country.ccn3">
+                <CardUnit :data="country" class="mx-auto" />
             </b-col>
         </b-row>
     </b-container>

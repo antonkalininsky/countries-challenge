@@ -6,6 +6,9 @@ export default {
     components: {
         NavElement,
     },
+    created() {
+        this.$store.dispatch('fetchAllCountries');
+    }
 };
 </script>
 

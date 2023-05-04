@@ -10,6 +10,10 @@ $font-size-base: 0.875rem;
     font-size: 14px !important;
 }
 
+.text-large {
+    font-size: 16px !important;
+}
+
 .text-w-800 {
     font-weight: 800 !important;
 }
@@ -35,4 +39,14 @@ input:focus
 {
     box-shadow: none !important;
     outline: none !important;
+}
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-img-box {
+    height: 120px;
+    overflow: hidden;
 }
