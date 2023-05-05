@@ -17,9 +17,7 @@ export default {
             if (num.length <= 3) {
                 return num;
             }
-            return `${this.populationDivider(num.slice(0, -3))},${num.slice(
-                -3
-            )}`;
+            return `${this.populationDivider(num.slice(0, -3))},${num.slice(-3)}`;
         },
     },
 };

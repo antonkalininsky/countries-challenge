@@ -84,8 +84,8 @@ const store = new Vuex.Store({
         },
         UPDATE_SORTED_COUNTRIES(state) {
             if (state.searchFilter) {
-                state.filteredCountries = state.countries.filter((country) =>
-                    country.continents.includes(state.searchFilter)
+                state.filteredCountries = state.countries.filter(
+                    (country) => country.region === state.searchFilter
                 );
             } else {
                 state.filteredCountries = state.countries;

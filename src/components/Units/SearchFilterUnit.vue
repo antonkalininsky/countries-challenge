@@ -7,7 +7,7 @@ export default {
             filterOptions: [
                 { value: null, text: "Filter by Region" },
                 { value: "Africa", text: "Africa" },
-                { value: "America", text: "America" },
+                { value: "Americas", text: "Americas" },
                 { value: "Asia", text: "Asia" },
                 { value: "Europe", text: "Europe" },
                 { value: "Oceania", text: "Oceania" },
