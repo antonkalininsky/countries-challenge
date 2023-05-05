@@ -5,12 +5,20 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        // adaptive
         screenWidth: 0,
+        // async
         isLoading: false,
         isError: false,
         countries: [],
         shownCountries: [],
         shownCounter: 0,
+        // search
+        searchWord: "",
+        searchFilter: "",
+        filteredCountries: [],
+        searchedCountries: [],
+        sortedCountries: [],
     },
     actions: {
         fetchAllCountries() {
@@ -57,14 +65,46 @@ const store = new Vuex.Store({
             }
         },
         ADD_SHOWN_COUNTRIES(state, num) {
+            let data = null;
+            if (state.searchFilter || state.searchWord) {
+                data = state.sortedCountries;
+            } else {
+                data = state.countries;
+            }
+
             state.shownCountries = [
                 ...state.shownCountries,
-                ...state.countries.slice(
-                    state.shownCounter,
-                    state.shownCounter + num
-                ),
+                ...data.slice(state.shownCounter, state.shownCounter + num),
             ];
             state.shownCounter += num;
+        },
+        RESET_SHOWN_DATA(state) {
+            state.shownCountries = [];
+            state.shownCounter = 0;
+        },
+        UPDATE_SORTED_COUNTRIES(state) {
+            if (state.searchFilter) {
+                state.filteredCountries = state.countries.filter((country) =>
+                    country.continents.includes(state.searchFilter)
+                );
+            } else {
+                state.filteredCountries = state.countries;
+            }
+
+            if (state.searchWord) {
+                state.searchedCountries = state.filteredCountries.filter(
+                    (country) =>
+                        country.name.common
+                            .toLowerCase()
+                            .includes(state.searchWord.toLowerCase())
+                );
+            } else {
+                state.searchedCountries = state.filteredCountries;
+            }
+
+            state.sortedCountries = state.searchedCountries;
+            this.commit("RESET_SHOWN_DATA");
+            this.commit("ADD_SHOWN_COUNTRIES", 12);
         },
     },
 });

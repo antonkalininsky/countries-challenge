@@ -3,8 +3,8 @@ export default {
     name: "SearchFilterUnit",
     data() {
         return {
-            selected: null,
-            options: [
+            searchFilter: null,
+            filterOptions: [
                 { value: null, text: "Filter by Region" },
                 { value: "Africa", text: "Africa" },
                 { value: "America", text: "America" },
@@ -14,14 +14,20 @@ export default {
             ],
         };
     },
+    watch: {
+        searchFilter(filter) {
+            this.$store.state.searchFilter = filter;
+            this.$store.commit('UPDATE_SORTED_COUNTRIES');
+        },
+    },
 };
 </script>
 
 <template>
     <b-form-select
         class="border-0 shadow-sm text-mid"
-        v-model="selected"
-        :options="options"
+        v-model="searchFilter"
+        :options="filterOptions"
     ></b-form-select>
 </template>
 
