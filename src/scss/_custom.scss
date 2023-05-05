@@ -34,6 +34,25 @@ $font-size-base: 0.875rem;
 $body-bg: #FAFAFA;
 $bg-light: #fff !important;
 
+.body-dark {
+    background-color: #202D36;
+}
+
+.general-dark {
+    background-color: #2B3743 !important;
+}
+
+.general-light {
+    background-color: #fff !important;
+}
+
+.font-light {
+    color: #F2F8F8 !important;
+}
+
+$light: #dddddd;
+$dark: #000;
+
 
 // OTHER
 .btn:focus,

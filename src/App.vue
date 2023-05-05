@@ -7,9 +7,9 @@ export default {
         NavElement,
     },
     created() {
-        this.$store.dispatch('fetchAllCountries');
-        this.$store.dispatch('setScreenWidthReader');
-    }
+        this.$store.dispatch("fetchAllCountries");
+        this.$store.dispatch("setScreenWidthReader");
+    },
 };
 </script>
 

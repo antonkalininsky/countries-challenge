@@ -5,8 +5,9 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        // adaptive
+        // screen
         screenWidth: 0,
+        isDarkMode: false,
         // async
         isLoading: false,
         isError: false,

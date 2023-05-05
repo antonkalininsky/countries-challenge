@@ -17,7 +17,7 @@ export default {
     watch: {
         searchFilter(filter) {
             this.$store.state.searchFilter = filter;
-            this.$store.commit('UPDATE_SORTED_COUNTRIES');
+            this.$store.commit("UPDATE_SORTED_COUNTRIES");
         },
     },
 };
