@@ -6,14 +6,34 @@ export default {
     data() {
         return {
             columns: 4,
+            timerScroll: null,
         };
     },
     components: {
         CardUnit,
     },
+    mounted() {
+        // initial data load
+        this.$store.commit("ADD_SHOWN_COUNTRIES", 12);
+
+        // infinite results scroll
+        window.addEventListener("scroll", () => {
+            if (this.timerScroll) return;
+            this.timerScroll = setTimeout(() => {
+                const scrollTop = window.scrollY;
+                const clientHeight = document.documentElement.clientHeight;
+                const scrollHeight = document.documentElement.scrollHeight;
+                if (scrollHeight <= scrollTop + clientHeight + 100) {
+                    this.$store.commit("ADD_SHOWN_COUNTRIES", 12);
+                }
+                clearTimeout(this.timerScroll);
+                this.timerScroll = null;
+            }, 300);
+        });
+    },
     computed: {
         shownCountries() {
-            return this.$store.state.countries;
+            return this.$store.state.shownCountries;
         },
         screenWidth() {
             return this.$store.state.screenWidth;
@@ -40,7 +60,7 @@ export default {
 </script>
 
 <template>
-    <b-container class="px-0">
+    <b-container class="px-0" id="inf-scroll">
         <b-row :cols="columns">
             <b-col
                 class="pb-4"

@@ -18,7 +18,6 @@ const store = new Vuex.Store({
             this.commit("SET_ERROR", false);
             try {
                 console.log("fetching");
-
                 fetch("https://restcountries.com/v3.1/all")
                     .then((response) => response.json())
                     .then((data) => {
@@ -40,7 +39,6 @@ const store = new Vuex.Store({
     mutations: {
         SET_ALL_COUNTRIES(state, data) {
             state.countries = data;
-            console.log(state.countries);
         },
         SET_LOADING(state, isLoading) {
             state.isLoading = isLoading;
@@ -59,7 +57,13 @@ const store = new Vuex.Store({
             }
         },
         ADD_SHOWN_COUNTRIES(state, num) {
-            // state.shownCountries = [...state.shownCountries, ...state.countries.slice(state.shownCounter, num)];
+            state.shownCountries = [
+                ...state.shownCountries,
+                ...state.countries.slice(
+                    state.shownCounter,
+                    state.shownCounter + num
+                ),
+            ];
             state.shownCounter += num;
         },
     },
