@@ -6,6 +6,9 @@ export default {
             searchWord: "",
         };
     },
+    mounted() {
+        this.searchWord = this.$store.state.searchWord;
+    },
     watch: {
         searchWord(searchWord) {
             this.$store.state.searchWord = searchWord;

@@ -14,6 +14,9 @@ export default {
             ],
         };
     },
+    mounted() {
+        this.searchFilter = this.$store.state.searchFilter;
+    },
     watch: {
         searchFilter(filter) {
             this.$store.state.searchFilter = filter;
