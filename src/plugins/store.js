@@ -108,6 +108,13 @@ const store = new Vuex.Store({
             this.commit("ADD_SHOWN_COUNTRIES", 12);
         },
     },
+    getters: {
+        getCountryById: (state) => (id) => {
+            console.log(id);
+            console.log(state.countries.find((country) => country.ccn3 === id));
+            return state.countries.find((country) => country.ccn3 === id);
+        },
+    },
 });
 
 export default store;

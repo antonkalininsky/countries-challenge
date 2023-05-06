@@ -36,7 +36,7 @@ export default {
                 class="ml-auto text-w-600 text-small px-0 disable-transition"
                 :class="{ 'font-light': isDarkMode }"
             >
-                <i class="fa-regular fa-moon fa-lg"></i>
+                <i class="fa-regular fa-moon fa-lg pr-1"></i>
                 Dark Mode
             </b-button>
         </b-container>
