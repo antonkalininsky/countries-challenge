@@ -1,6 +1,11 @@
 <script>
+import CountryButton from "../Units/CountryButton.vue";
+
 export default {
     name: "DescriptionElement",
+    components: {
+        CountryButton,
+    },
     data() {
         return {
             columns: 6,
@@ -126,6 +131,9 @@ export default {
             </b-col>
             <b-col cols="12" class="text-w-800 text-small">
                 Border Countries
+                <span class="p-1" v-for="code in data.borders" :key="code">
+                    <CountryButton :code="code"/>
+                </span>
             </b-col>
         </b-row>
     </b-container>

@@ -114,6 +114,11 @@ const store = new Vuex.Store({
             console.log(state.countries.find((country) => country.ccn3 === id));
             return state.countries.find((country) => country.ccn3 === id);
         },
+        getCountryByCode: (state) => (code) => {
+            console.log(code);
+            console.log(state.countries.find((country) => country.cca3 === code));
+            return state.countries.find((country) => country.cca3 === code);
+        },
     },
 });
 

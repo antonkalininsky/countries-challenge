@@ -3,17 +3,14 @@ import DescriptionElement from "../Elements/DescriptionElement.vue";
 
 export default {
     name: "CountryPage",
-    data() {
-        return {
-            data: null,
-        };
-    },
     components: {
         DescriptionElement,
     },
-    created() {
-        this.data = this.$store.getters.getCountryById(this.$route.query.id);
-    },
+    computed: {
+        data() {
+            return this.$store.getters.getCountryById(this.$route.query.id);
+        }
+    }
 };
 </script>
 
