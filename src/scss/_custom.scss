@@ -31,39 +31,42 @@ $font-size-base: 0.875rem;
 }
 
 // COLORS
-$body-bg: #FAFAFA;
+$body-bg: #fafafa;
 $bg-light: #fff !important;
 
 .body-dark {
-    background-color: #202D36;
+    background-color: #202d36;
 }
 
 .general-dark {
-    background-color: #2B3743 !important;
+    background-color: #2b3743 !important;
 }
 
 .general-light {
     background-color: #fff !important;
 }
 
-.font-light {
-    color: #F2F8F8 !important;
+.font-light,
+.font-light::placeholder {
+    color: #f2f8f8 !important;
+}
+
+.disable-transition {
+    transition: none !important;
 }
 
 $light: #dddddd;
 $dark: #000;
 
-
 // OTHER
 .btn:focus,
-input:focus
-{
+input:focus {
     box-shadow: none !important;
     outline: none !important;
 }
 
 .card-size {
-    max-width: 20rem; 
+    max-width: 20rem;
     height: 300px;
 }
 

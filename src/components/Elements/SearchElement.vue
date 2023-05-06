@@ -7,7 +7,7 @@ export default {
     data() {
         return {
             inputCols: 5,
-            filterCols: 4,
+            filterCols: 3,
         };
     },
     components: {
@@ -22,7 +22,7 @@ export default {
     watch: {
         screenWidth(value) {
             this.inputCols = 5;
-            this.filterCols = 4;
+            this.filterCols = 3;
             if (value < 768) {
                 this.inputCols = 12;
                 this.filterCols = 7;

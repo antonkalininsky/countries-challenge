@@ -33,7 +33,7 @@ export default {
             <b-button
                 :pressed.sync="isDarkMode"
                 variant="link,white"
-                class="ml-auto text-w-600 text-small px-0"
+                class="ml-auto text-w-600 text-small px-0 disable-transition"
                 :class="{ 'font-light': isDarkMode }"
             >
                 <i class="fa-regular fa-moon fa-lg"></i>

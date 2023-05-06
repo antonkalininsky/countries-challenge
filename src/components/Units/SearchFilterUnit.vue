@@ -25,7 +25,8 @@ export default {
 
 <template>
     <b-form-select
-        class="border-0 shadow-sm text-mid"
+        class="border-0 shadow-sm text-mid disable-transition"
+        :class="{'general-dark font-light' : $store.state.isDarkMode }"
         v-model="searchFilter"
         :options="filterOptions"
     ></b-form-select>
