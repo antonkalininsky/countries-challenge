@@ -16,7 +16,7 @@ const store = new Vuex.Store({
         shownCounter: 0,
         // search
         searchWord: "",
-        searchFilter: "",
+        searchFilter: null,
         filteredCountries: [],
         searchedCountries: [],
         sortedCountries: [],
@@ -31,6 +31,7 @@ const store = new Vuex.Store({
                     .then((response) => response.json())
                     .then((data) => {
                         this.commit("SET_ALL_COUNTRIES", data);
+                        this.commit("ADD_SHOWN_COUNTRIES", 12);
                     });
             } catch (error) {
                 console.log(error);
@@ -110,13 +111,9 @@ const store = new Vuex.Store({
     },
     getters: {
         getCountryById: (state) => (id) => {
-            console.log(id);
-            console.log(state.countries.find((country) => country.ccn3 === id));
             return state.countries.find((country) => country.ccn3 === id);
         },
         getCountryByCode: (state) => (code) => {
-            console.log(code);
-            console.log(state.countries.find((country) => country.cca3 === code));
             return state.countries.find((country) => country.cca3 === code);
         },
     },

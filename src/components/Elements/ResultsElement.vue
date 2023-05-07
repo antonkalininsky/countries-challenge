@@ -12,10 +12,7 @@ export default {
     components: {
         CardUnit,
     },
-    mounted() {
-        // initial data load
-        this.$store.commit("ADD_SHOWN_COUNTRIES", 12);
-
+    created() {
         // infinite results scroll
         window.addEventListener("scroll", () => {
             if (this.timerScroll) return;
