@@ -38,13 +38,20 @@ export default {
             return "-";
         },
         readNames(names) {
-            let rslt = "";
+            const namesList = new Set();
             for (let name of Object.values(names)) {
-                rslt += `${name.common}`;
-                if (name !== Object.values(names).at(-1)) {
-                    rslt += ", ";
+                namesList.add(name.common);
+            }
+
+            let rslt = "";
+            for (let name of namesList) {
+                rslt += `${name}`;
+                namesList.delete(name);
+                if (namesList.size !== 0) {
+                    rslt += `, `;
                 }
             }
+
             return rslt;
         },
         readLanguages(languages) {
@@ -132,7 +139,7 @@ export default {
             <b-col cols="12" class="text-w-800 text-small">
                 Border Countries
                 <span class="p-1" v-for="code in data.borders" :key="code">
-                    <CountryButton :code="code"/>
+                    <CountryButton :code="code" />
                 </span>
             </b-col>
         </b-row>
