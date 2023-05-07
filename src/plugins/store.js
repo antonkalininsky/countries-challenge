@@ -110,9 +110,6 @@ const store = new Vuex.Store({
         },
     },
     getters: {
-        getCountryById: (state) => (id) => {
-            return state.countries.find((country) => country.ccn3 === id);
-        },
         getCountryByCode: (state) => (code) => {
             return state.countries.find((country) => country.cca3 === code);
         },

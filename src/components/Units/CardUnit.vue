@@ -79,7 +79,7 @@ export default {
         </div>
         <b-link
             class="stretched-link"
-            :to="{ path: '/country', query: { id: data.ccn3 } }"
+            :to="{ path: '/country', query: { id: data.cca3 } }"
         ></b-link>
     </b-card>
 </template>

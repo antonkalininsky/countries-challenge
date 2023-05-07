@@ -62,7 +62,7 @@ export default {
             <b-col
                 class="pb-4"
                 v-for="country in shownCountries"
-                :key="country.ccn3"
+                :key="country.cca3"
             >
                 <CardUnit :data="country" class="mx-auto" />
             </b-col>

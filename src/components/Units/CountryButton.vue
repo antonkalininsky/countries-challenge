@@ -15,7 +15,7 @@ export default {
     created() {
         const country = this.$store.getters.getCountryByCode(this.$props.code);
         this.name = country.name;
-        this.id = country.ccn3;
+        this.id = country.cca3;
     },
     methods: {
         changeCountry() {

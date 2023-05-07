@@ -8,7 +8,7 @@ export default {
     },
     computed: {
         data() {
-            return this.$store.getters.getCountryById(this.$route.query.id);
+            return this.$store.getters.getCountryByCode(this.$route.query.id);
         }
     }
 };

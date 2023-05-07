@@ -82,6 +82,12 @@ export default {
                 -3
             )}`;
         },
+        readDomain(domain) {
+            if (domain) {
+                return domain[0];
+            }
+            return "-";
+        },
     },
 };
 </script>
@@ -107,7 +113,7 @@ export default {
                         </b-col>
                         <b-col :cols="columns" class="text-small px-0 pb-1">
                             <span class="text-w-800">Top Level Domain: </span>
-                            {{ data.tld[0] }}
+                            {{ readDomain(data.tld) }}
                         </b-col>
                         <b-col :cols="columns" class="text-small px-0 pb-1">
                             <span class="text-w-800">Population: </span>
