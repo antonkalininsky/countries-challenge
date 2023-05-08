@@ -22,7 +22,7 @@ export default {
     watch: {
         screenWidth: {
             handler(value) {
-                this.columns = 5;
+                this.columns = 6;
                 if (value < 768) {
                     this.columns = 12;
                     return;

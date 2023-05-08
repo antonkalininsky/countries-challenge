@@ -110,44 +110,66 @@ export default {
                     {{ data.name.common }}
                 </h2>
             </b-col>
-            <b-col cols="12" class="pb-5 px-0">
-                <b-container>
-                    <b-row>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Native Name: </span>
-                            {{ readNames(data.name.nativeName) }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Top Level Domain: </span>
-                            {{ readDomain(data.tld) }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Population: </span>
-                            {{ populationDivider(String(data.population)) }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Currencies: </span>
-                            {{ readCurrencies(data.currencies) }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Region: </span>
-                            {{ data.region }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Language: </span>
-                            {{ readLanguages(data.languages) }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Sub Region: </span>
-                            {{ data.subregion }}
-                        </b-col>
-                        <b-col :cols="columns" class="text-small px-0 pb-1">
-                            <span class="text-w-800">Capital: </span>
-                            {{ readCapital(data.capital) }}
-                        </b-col>
-                    </b-row>
-                </b-container>
+        </b-row>
+        <b-row>
+            <b-col :cols="columns" class="pb-3 px-0">
+                <b-list-group class="border-0">
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Native Name: </span>
+                        {{ readNames(data.name.nativeName) }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Population: </span>
+                        {{ populationDivider(String(data.population)) }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Region: </span>
+                        {{ data.region }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Sub Region: </span>
+                        {{ data.subregion }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Capital: </span>
+                        {{ readCapital(data.capital) }}
+                    </b-list-group-item>
+                </b-list-group>
             </b-col>
+            <b-col :cols="columns" class="pb-5 px-0">
+                <b-list-group class="border-0">
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Top Level Domain: </span>
+                        {{ readDomain(data.tld) }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Currencies: </span>
+                        {{ readCurrencies(data.currencies) }}
+                    </b-list-group-item>
+                    <b-list-group-item
+                        class="text-small px-0 py-1 border-0 bg-transperent"
+                    >
+                        <span class="text-w-800">Language: </span>
+                        {{ readLanguages(data.languages) }}
+                    </b-list-group-item>
+                </b-list-group>
+            </b-col>
+        </b-row>
+        <b-row>
             <b-col cols="12" class="text-w-800 text-small px-0">
                 Border Countries:
                 <span v-if="data.borders === undefined" class="text-w-300">
