@@ -31,6 +31,13 @@ export default {
             immediate: true,
         },
     },
+    methods: {
+        goHome() {
+            this.$store.commit("RESET_SHOWN_DATA");
+            this.$store.commit("ADD_SHOWN_COUNTRIES", 12);
+            this.$router.push("/");
+        },
+    },
 };
 </script>
 
@@ -44,7 +51,7 @@ export default {
                     :class="{
                         'general-dark font-light': $store.state.isDarkMode,
                     }"
-                    to="/"
+                    @click="goHome()"
                 >
                     <i class="fa-solid fa-arrow-left pr-2"></i>
                     Back
