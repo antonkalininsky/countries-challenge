@@ -12,6 +12,10 @@ const routes = [
         path: "/country",
         component: () => import("../components/Pages/CountryPage.vue"),
     },
+    {
+        path: "*",
+        component: () => import("../components/Pages/NoPage.vue"),
+    },
 ];
 
 const router = new VueRouter({
