@@ -28,7 +28,7 @@ export default {
 <template lang="">
     <b-button
         variant="black,link"
-        class="px-4 shadow-sm text-small disable-transition"
+        class="px-4 shadow-sm text-small disable-transition my-1"
         :class="{
             'general-dark font-light': $store.state.isDarkMode,
         }"

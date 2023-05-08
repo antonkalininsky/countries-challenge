@@ -9,6 +9,7 @@ export default {
     data() {
         return {
             columns: 6,
+            isBreak: false,
         };
     },
     props: {
@@ -22,12 +23,17 @@ export default {
         },
     },
     watch: {
-        screenWidth(value) {
-            this.columns = 6;
-            if (value < 768) {
-                this.columns = 12;
-                return;
-            }
+        screenWidth: {
+            handler(value) {
+                this.columns = 6;
+                this.isBreak = false;
+                if (value < 768) {
+                    this.columns = 12;
+                    this.isBreak = true;
+                    return;
+                }
+            },
+            immediate: true,
         },
     },
     methods: {
@@ -99,12 +105,12 @@ export default {
         }"
     >
         <b-row>
-            <b-col cols="12" class="pb-3">
+            <b-col cols="12" class="pb-3 px-0">
                 <h2 class="text-w-800 text-large">
                     {{ data.name.common }}
                 </h2>
             </b-col>
-            <b-col cols="12" class="pb-5">
+            <b-col cols="12" class="pb-5 px-0">
                 <b-container>
                     <b-row>
                         <b-col :cols="columns" class="text-small px-0 pb-1">
@@ -142,8 +148,12 @@ export default {
                     </b-row>
                 </b-container>
             </b-col>
-            <b-col cols="12" class="text-w-800 text-small">
-                Border Countries
+            <b-col cols="12" class="text-w-800 text-small px-0">
+                Border Countries:
+                <span v-if="data.borders === undefined" class="text-w-300">
+                    none
+                </span>
+                <br v-if="isBreak" />
                 <span class="p-1" v-for="code in data.borders" :key="code">
                     <CountryButton :code="code" />
                 </span>

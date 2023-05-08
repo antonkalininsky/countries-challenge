@@ -37,20 +37,23 @@ export default {
         },
     },
     watch: {
-        screenWidth(value) {
-            this.columns = 4;
-            if (value < 580) {
-                this.columns = 1;
-                return;
-            }
-            if (value < 768) {
-                this.columns = 2;
-                return;
-            }
-            if (value < 992) {
-                this.columns = 3;
-                return;
-            }
+        screenWidth: {
+            handler(value) {
+                this.columns = 4;
+                if (value < 580) {
+                    this.columns = 1;
+                    return;
+                }
+                if (value < 768) {
+                    this.columns = 2;
+                    return;
+                }
+                if (value < 992) {
+                    this.columns = 3;
+                    return;
+                }
+            },
+            immediate: true,
         },
     },
 };

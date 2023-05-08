@@ -3,14 +3,34 @@ import DescriptionElement from "../Elements/DescriptionElement.vue";
 
 export default {
     name: "CountryPage",
+    data() {
+        return {
+            columns: 5,
+        };
+    },
     components: {
         DescriptionElement,
     },
     computed: {
         data() {
             return this.$store.getters.getCountryByCode(this.$route.query.id);
-        }
-    }
+        },
+        screenWidth() {
+            return this.$store.state.screenWidth;
+        },
+    },
+    watch: {
+        screenWidth: {
+            handler(value) {
+                this.columns = 5;
+                if (value < 768) {
+                    this.columns = 12;
+                    return;
+                }
+            },
+            immediate: true,
+        },
+    },
 };
 </script>
 
@@ -32,10 +52,12 @@ export default {
             </b-col>
         </b-row>
         <b-row>
-            <b-col cols="5">
-                <b-img :src="data.flags.svg" fluid></b-img>
+            <b-col :cols="columns" class="py-0">
+                <b-img :src="data.flags.svg" fluid class="mb-4"></b-img>
             </b-col>
-            <b-col><DescriptionElement :data="data" /></b-col>
+            <b-col :cols="12 - columns" class="py-0">
+                <DescriptionElement :data="data" />
+            </b-col>
         </b-row>
     </b-container>
 </template>

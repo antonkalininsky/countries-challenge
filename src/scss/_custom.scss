@@ -51,13 +51,6 @@ $bg-light: #fff !important;
     color: #f2f8f8 !important;
 }
 
-.disable-transition {
-    transition: none !important;
-}
-
-$light: #dddddd;
-$dark: #000;
-
 // OTHER
 .btn:focus,
 input:focus {
@@ -79,4 +72,13 @@ input:focus {
 .card-img-box {
     height: min(calc(200px - 3vw), 160px);
     overflow: hidden;
+}
+
+.disable-transition {
+    transition: none !important;
+}
+
+.disable-bottom-round {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }

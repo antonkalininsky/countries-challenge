@@ -37,7 +37,7 @@ export default {
                 :src="data.flags.svg"
                 alt="Image"
                 top
-                class="card-img"
+                class="card-img disable-bottom-round"
                 rounded="top"
             ></b-card-img>
         </div>

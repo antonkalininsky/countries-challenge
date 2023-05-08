@@ -20,14 +20,17 @@ export default {
         },
     },
     watch: {
-        screenWidth(value) {
-            this.inputCols = 5;
-            this.filterCols = 3;
-            if (value < 768) {
-                this.inputCols = 12;
-                this.filterCols = 7;
-                return;
-            }
+        screenWidth: {
+            handler(value) {
+                this.inputCols = 5;
+                this.filterCols = 3;
+                if (value < 768) {
+                    this.inputCols = 12;
+                    this.filterCols = 7;
+                    return;
+                }
+            },
+            immediate: true,
         },
     },
 };
