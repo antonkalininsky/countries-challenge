@@ -32,6 +32,10 @@ const store = new Vuex.Store({
                     .then((data) => {
                         this.commit("SET_ALL_COUNTRIES", data);
                         this.commit("ADD_SHOWN_COUNTRIES", 12);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        this.commit("SET_ERROR", true);
                     });
             } catch (error) {
                 console.log(error);
