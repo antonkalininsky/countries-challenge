@@ -40,7 +40,7 @@ export default {
             <b-col class="py-5">
                 <b-button
                     variant="black,link"
-                    class="px-4 shadow-sm text-small disable-transition"
+                    class="px-4 shadow-custom text-small disable-transition"
                     :class="{
                         'general-dark font-light': $store.state.isDarkMode,
                     }"
